@@ -137,7 +137,35 @@ $("btnSwitch").onclick = () => {
   renderTeam(); say(`Go! ${MONS[cur].name}! (smart switch: resists foe STAB, threatens 2x back)`);
 };
 
-/* ---- GEN 1-8 DEX (#1-905, live PokeAPI, paged) ---- */
+/* ---- ROTOM PHONE BOOT: Hi → rotate → enlarge → play ----
+   Fixes the old "press start, nothing happens": ONE clear START (bootStart)
+   unlocks audio, flips the phone 360°, fades overlay, then enables the arena. */
+(function rotomBoot(){
+  const hi = ["Hi! ⚡ Bzzzt! I'm Rotom!", "Team Chariz4rd X! detected... Adnan + Zayaan ✓",
+              "3 phenomena loaded: MEGA • G-MAX • Z...", "Tap START and I enlarge into the arena!"];
+  let li = 0;
+  const el = document.getElementById("rotomHi");
+  const typer = setInterval(() => { li = (li+1) % hi.length; if(el) el.textContent = hi[li]; }, 2200);
+  document.getElementById("bootStart").onclick = () => {
+    clearInterval(typer);
+    try{
+      if(!AC) AC = new (window.AudioContext || window.webkitAudioContext)();
+      if(AC.state === "suspended") AC.resume();
+      nt(523.25, AC.currentTime, .12, "square", .08);
+      nt(783.99, AC.currentTime+.1, .12, "square", .08);
+      nt(1046.5, AC.currentTime+.2, .25, "square", .09);
+    }catch(_){}
+    document.getElementById("boot").classList.add("flip");
+    say("Rotom: Bzzzt! Enlarging screen... welcome to AETHERIA!");
+    setTimeout(() => {
+      document.getElementById("boot").classList.add("off");
+      document.body.classList.remove("locked");
+      document.body.classList.add("playing");
+      const t = document.getElementById("tut");
+      if(t){ t.classList.remove("hide"); setTimeout(() => t.classList.add("hide"), 12000); }
+    }, 1150);
+  };
+})();
 const GENS = [["Gen 1",1,151],["Gen 2",152,251],["Gen 3",252,386],["Gen 4",387,493],
               ["Gen 5",494,649],["Gen 6",650,721],["Gen 7",722,809],["Gen 8",810,905]];
 let dexList = [], dexShown = 0;

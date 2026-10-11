@@ -96,5 +96,34 @@ body{background:var(--bg);color:#eef;font-family:"Courier New",monospace;min-hei
 .deploy .steps{line-height:2;font-size:13px;padding-left:22px}.steps code{background:#000;padding:2px 6px;border:1px solid #444}
 .dl{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}.dl a{border:2px solid var(--amber);padding:8px 12px;color:var(--amber);text-decoration:none;font-weight:700}.dl a.zip{background:var(--amber);color:#111}
 footer{text-align:center;margin:30px 0;color:#889;font-size:12px}
+/* ROTOM PHONE BOOT */
+body.locked{overflow:hidden}
+body.locked .wrap,body.locked .topbar{filter:blur(6px) brightness(.6);transform:scale(.96);pointer-events:none}
+.wrap,.topbar{transition:transform .8s ease,filter .8s ease}
+.boot{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(800px 500px at 50% 30%,#1c2450,#05071a);transition:opacity .7s,visibility .7s}
+.boot.off{opacity:0;visibility:hidden}
+.rotom-phone{perspective:900px}
+.rotom-case{width:300px;background:linear-gradient(160deg,#ff7a3b,#e33d2e);border-radius:38px;padding:16px;border:4px solid #0a0a14;box-shadow:0 30px 80px #000,0 0 60px #ff7a3b55;transition:transform 1.1s cubic-bezier(.2,.9,.2,1.2);transform-style:preserve-3d}
+.boot.flip .rotom-case{transform:rotateY(360deg) scale(1.35)}
+.rotom-cam{width:12px;height:12px;border-radius:50%;background:#0a0a14;margin:0 auto 10px}
+.rotom-screen{background:#f4f8ff;border-radius:22px;padding:18px 14px;text-align:center;color:#10243f;min-height:300px}
+.rotom-face{position:relative;height:96px;margin-bottom:8px}
+.reye{position:absolute;top:10px;width:64px;height:64px;background:#39e6ff;border-radius:50% 50% 50% 4px;box-shadow:0 0 22px #39e6ff;animation:rblink 3s infinite}
+.reye.left{left:38px;transform:rotate(-12deg)}.reye.right{right:38px;transform:rotate(12deg) scaleX(-1)}
+.reye i{position:absolute;left:18px;top:20px;width:26px;height:26px;background:#0a2540;border-radius:50%}
+.reye i::after{content:"";position:absolute;left:5px;top:5px;width:9px;height:9px;background:#fff;border-radius:50%}
+@keyframes rblink{0%,92%,100%{transform:scaleY(1) rotate(-12deg)}95%{transform:scaleY(.08) rotate(-12deg)}}
+.reye.right{animation-name:rblinkR}
+@keyframes rblinkR{0%,92%,100%{transform:scaleY(1) rotate(12deg) scaleX(-1)}95%{transform:scaleY(.08) rotate(12deg) scaleX(-1)}}
+.rmouth{width:56px;height:16px;background:#10243f;border-radius:0 0 30px 30px;margin:0 auto}
+.rotom-hi{font-weight:900;min-height:44px}
+.rotom-sub{font-size:11px;color:#567;margin-top:4px}
+.rotom-start{margin-top:14px;width:100%;padding:14px;font-size:18px;font-weight:900;letter-spacing:2px;cursor:pointer;border:3px solid #0a0a14;border-radius:16px;background:#0a0a14;color:#ffd94d;box-shadow:0 6px 0 #000}
+.rotom-start:active{transform:translateY(4px);box-shadow:none}
+.rotom-apps{display:flex;justify-content:space-around;margin-top:12px}
+.rotom-apps i{width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:12px;border:2px solid #0a0a1433;font-style:normal;font-size:20px}
+.boot-hint{color:#9fb0e8;margin-top:16px;font-size:13px}
+body.playing .wrap{animation:zin .9s ease}
+@keyframes zin{from{transform:scale(.92)}to{transform:scale(1)}}
 .lab{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.lab select,.lab button{background:#05071a;border:2px solid var(--cyan);color:#fff;padding:9px;font-weight:700;cursor:pointer}#labGo,#autoGo{background:var(--amber);border-color:var(--amber);color:#111}#logDl{border-color:var(--amber);color:var(--amber)}.lab-out{width:100%;background:#05071a;border:2px solid #2b355a;padding:12px;font-size:14px}.lab-out.ko{background:#123f22;border-color:#37e05a}.battle-log{background:#05071a;border:2px solid #2b355a;padding:12px;max-height:260px;overflow:auto;font-size:12px;white-space:pre-wrap;margin-top:10px}.tutorial{position:fixed;inset:0;background:#000c;z-index:50;display:flex;align-items:center;justify-content:center}.tutorial.hide{display:none}.tut-card{background:#121830;border:3px solid var(--amber);padding:24px;max-width:440px;text-align:center;line-height:2}.tut-card button{background:var(--amber);border:none;padding:12px 20px;font-weight:900;cursor:pointer;margin-top:10px}
 .card.rival{border-color:#5c1a2a;background:linear-gradient(#2a0f1a,#121830)}.card.rival:hover{border-color:var(--red)}

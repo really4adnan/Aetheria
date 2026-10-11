@@ -20,6 +20,11 @@ Tournament fights **base forms only**. Mega / G-Max / Z buttons are showcase ani
 
 ## How to play the game
 
+### Boot (new Gen Rotom Phone style)
+1. Site opens on a Rotom Phone saying Hi (typewriter greetings).
+2. Press **▶ START** — phone spins 360°, screen enlarges, arena fades in with a boot chime.
+3. Old bug fixed: there is now ONE clear START (the phone). The arena is locked/blurred until boot, so presses never feel dead.
+
 ### The machine
 Open the site → you see the ULTIMATE GBA screen (foe on top, you at bottom, HP bars, dialog box).
 
