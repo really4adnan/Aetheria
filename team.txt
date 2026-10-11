@@ -1,0 +1,64 @@
+Team Name: Chariz4rd X!
+Theme: GBA Kanto Trio - FireRed Advanced (Gen 1-8 legal)
+Members: Adnan A Laksar & Zayaan Yusuf (Duo)
+Format: Gen 9 3v3 Singles | Engine: Pokemon Showdown
+
+=== Slot 1: Venusaur (Lead - Sleep + Wallbreaker) ===
+Pokemon: Venusaur
+Ability: Overgrow
+Item: Black Sludge
+Nature: Modest
+EVs: Bulky Special (252 HP / 252 SpA / 4 SpD)
+Moves:
+- Giga Drain
+- Sludge Bomb
+- Earth Power
+- Sleep Powder
+
+Role: Anti-setup lead. Sleep Powder first vs sweepers (Volcarona/Dragonite/Gyarados),
+Earth Power kills Excadrill/Metagross/Tyranitar, Giga Drain heals + beats Blastoise/Lapras,
+Sludge Bomb kills Togekiss/Fairy. Black Sludge + Giga Drain = infinite stall.
+
+=== Slot 2: Blastoise (Pivot - Dragon Killer) ===
+Pokemon: Blastoise
+Ability: Torrent
+Item: Leftovers
+Nature: Modest
+EVs: Bulky Special (252 HP / 252 SpA / 4 SpD)
+Moves:
+- Hydro Pump
+- Ice Beam
+- Aura Sphere
+- Yawn
+
+Role: Mid-game pivot. Ice Beam one-shots Garchomp/Dragonite/Salamence/Dragapult,
+Aura Sphere kills Tyranitar/Ferrothorn/Scizor, Yawn forces switches and gives
+Venusaur/Charizard free turns. Walls Charizard's Rock weakness.
+
+=== Slot 3: Charizard (Ace - X-Factor Closer) ===
+Pokemon: Charizard
+Ability: Blaze
+Item: Life Orb
+Nature: Timid
+EVs: Special Sweeper (252 SpA / 252 Spe / 4 SpD)
+Moves:
+- Flamethrower
+- Air Slash
+- Focus Blast
+- Dragon Pulse
+
+Role: Closer. Flamethrower STAB melts Ferrothorn/Scizor/Corviknight,
+Focus Blast kills Tyranitar (Charizard's #1 counter),
+Dragon Pulse kills Dragons, Air Slash flinch cheese.
+Life Orb (not Choice Specs) so agent can switch moves freely.
+Blaze (not Solar Power) - reliable with no sun setter.
+
+=== Why this trio wins ===
+Fire/Water/Grass triangle - every weakness covered:
+- Charizard 4x Rock -> Blastoise resists Rock, Venusaur Earth Power KOs Rock
+- Blastoise Electric/Grass -> Venusaur resists both, Charizard resists Grass
+- Venusaur Fire/Flying/Psychic -> Charizard resists Fire/Grass, Blastoise resists Fire
+Sleep (Venusaur) + Yawn (Blastoise) beats sample bots that never handle status.
+Priority-safe bulk + Leftovers/Sludge recovery outlasts 100-turn limit on HP% tiebreak.
+
+Agent file: chariz4rd_x_agent.py (class PokemonAgent.decide)

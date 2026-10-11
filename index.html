@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AETHERIA ✦ Ultra GBA Requiem — phenomena arena starring Chariz4rd X! Kanto trio AI agent with Mega, G-Max, Z showcase, Gen 1-8 dex, damage lab and auto-battle. ARES x Shunya.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+<title>AETHERIA ✦ Ultra GBA Requiem — starring Chariz4rd X!</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="stars"></canvas>
+<div class="aurora"></div>
+
+<header class="topbar">
+  <div class="logo">AETHER<span>IA</span> <em>ultra gba requiem</em></div>
+  <div class="badges">
+    <span class="badge">starring Chariz4rd X!</span>
+    <span class="badge alt">GEN 1–8 • 905 MONS</span>
+    <button id="btnMusic" class="music-btn">♪ MUSIC: OFF</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ULTIMATE GBA MACHINE -->
+  <section class="gba-ultra">
+    <div class="gba-top">
+      <span class="led"></span>
+      <span class="gba-title">AETHERIA ENGINE — MEGA / G-MAX / Z READY • team Chariz4rd X!</span>
+      <span class="lights"><i></i><i></i><i></i></span>
+    </div>
+    <div class="screen-bezel">
+      <div class="screen" id="screen">
+        <div class="sky" id="sky"></div>
+        <div class="scanlines"></div>
+        <div class="battle">
+          <div class="foe-side">
+            <div class="foe-info pixel-box">
+              <div class="pname" id="foeName">TYRANITAR</div>
+              <div class="hpbar"><div class="hpfill foe" id="foeHp"></div></div>
+            </div>
+            <img id="foeSprite" class="sprite foe-img" alt="foe"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/248.gif">
+          </div>
+          <div class="my-side">
+            <img id="mySprite" class="sprite my-img" alt="mon"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/6.gif">
+            <div class="my-info pixel-box">
+              <div class="pname" id="myName">CHARIZARD</div>
+              <div class="hpbar"><div class="hpfill my" id="myHp"></div></div>
+              <div class="pp-row" id="ppRow"></div>
+            </div>
+          </div>
+          <div class="fx-flash" id="flash"></div>
+          <div class="fx-mega" id="fxMega">MEGA EVOLUTION</div>
+          <div class="fx-gmax" id="fxGmax">G-MAX</div>
+          <div class="fx-z" id="fxZ">Z-MOVE ★</div>
+          <div class="rings" id="rings"><i></i><i></i><i></i></div>
+        </div>
+        <div class="dialog" id="dialog">▼ AETHERIA ready. 3 phenomena online...</div>
+      </div>
+    </div>
+    <div class="controls">
+      <div class="dpad"><i class="h"></i><i class="v"></i><b></b></div>
+      <div class="pheno-btns">
+        <button id="btnMega" class="ph mega">MEGA</button>
+        <button id="btnGmax" class="ph gmax">G-MAX</button>
+        <button id="btnZ" class="ph zmove">Z</button>
+      </div>
+      <div class="btns"><button id="btnFight">FIGHT</button><button id="btnSwitch">PKMN</button></div>
+    </div>
+    <p class="note">Tournament uses base forms only (no Mega/G-Max/Z in battle) — these buttons are SHOWCASE animations for your site. Your submitted trio fights base-form.</p>
+  </section>
+
+  <!-- THE 3 -->
+  <section>
+    <h2 class="sec">◈ CHARIZ4RD X! — THE 3 PHENOMENA ◈</h2>
+    <p class="sub">Team Chariz4rd X! (Adnan + Zayaan). Every mon below exists till Gen 8 AND has a phenomenon. Click ACTIVATE to see it on the screen above.</p>
+    <div class="team" id="team"></div>
+  </section>
+
+  <!-- RIVALS -->
+  <section>
+    <h2 class="sec">◈ RIVALS — THE BOSSES OF AETHERIA ◈</h2>
+    <p class="sub">Not your team — the threats your agent was built to kill. Each shows who counters it.</p>
+    <div class="team" id="rivals"></div>
+  </section>
+
+  <!-- PHENOMENA EXPLAINER -->
+  <section class="panel">
+    <h2 class="sec">◈ MEGA vs G-MAX vs Z — IN 30 SECONDS ◈</h2>
+    <div class="grid3">
+      <div class="pcard mega-c"><h3>◈ MEGA EVOLUTION (Gen 6)</h3><p>Needs Mega Stone + Key Stone. Once per battle, permanent till faint. <b>Charizard → X</b> (Fire/Dragon, Tough Claws) or <b>Y</b> (Drought sun). Venusaur/Blastoise also Mega. +100 BST.</p></div>
+      <div class="pcard gmax-c"><h3>◈ G-MAX (Gen 8 Galar)</h3><p>Needs Dynamax Band + Galar power spot. 3 turns giant, HP ×1.5, moves become G-Max moves (G-Max Wildfire / Cannonade / Vine Lash). Charizard, Venusaur, Blastoise all have G-Max forms.</p></div>
+      <div class="pcard z-c"><h3>◈ Z-MOVES (Gen 7)</h3><p>Needs Z-Crystal + pose. Once per battle, any mon. Fire → Inferno Overdrive, Water → Hydro Vortex, Grass → Bloom Doom. Upgrades one move to nuke.</p></div>
+    </div>
+  </section>
+
+  <!-- ALL GEN 1-8 -->
+  <section class="panel">
+    <h2 class="sec">◈ ALL POKEMON TILL GEN 8 — #001 to #905 ◈</h2>
+    <p class="sub">Live Pokedex via PokeAPI. Pick a generation or search. Your hackathon roster (24 mons) is a subset of this.</p>
+    <div class="dex-bar">
+      <div class="gen-btns" id="genBtns"></div>
+      <input id="dexSearch" placeholder="Search e.g. charizard, lucario, 445..." autocomplete="off">
+    </div>
+    <div class="dex-status" id="dexStatus">Loading Gen 1...</div>
+    <div class="dex" id="dex"></div>
+  </section>
+
+  <!-- DAMAGE LAB + AUTO BATTLE (point boosters) -->
+  <section class="panel">
+    <h2 class="sec">◈ DAMAGE LAB — THE AI'S MATH, LIVE ◈</h2>
+    <p class="sub">Same formula as <code>chariz4rd_x_agent.py</code>: Power × Matchup × STAB × Boosts. Pick attacker, move, foe HP — see KO%.</p>
+    <div class="lab">
+      <select id="labAtk"></select>
+      <select id="labMove"></select>
+      <select id="labFoe"></select>
+      <button id="labGo">CALC KO%</button>
+      <div class="lab-out" id="labOut">Pick and calc...</div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2 class="sec">◈ AUTO-BATTLE — AI vs AI, NO HUMANS ◈</h2>
+    <p class="sub">The event's core theme: autonomous decision-making. Press START — both sides use your agent logic. Export the log for judges.</p>
+    <div class="lab">
+      <button id="autoGo">▶ START AI vs AI</button>
+      <button id="logDl">⬇ EXPORT LOG</button>
+    </div>
+    <pre class="battle-log" id="battleLog">Press START — 3v3 auto-battle log appears here...</pre>
+  </section>
+
+  <section class="panel">
+    <h2 class="sec">◈ VALIDATION — 4/4 TESTS PASS ◈</h2>
+    <div class="grid2">
+      <ul class="feat" id="testList">
+        <li>✓ Charizard vs Tyranitar → Focus Blast (not resisted Fire)</li>
+        <li>✓ Venusaur vs +1 Volcarona → Sleep Powder (status win-con)</li>
+        <li>✓ Blastoise vs 20% Garchomp → Ice Beam 4x KO</li>
+        <li>✓ 18% Charizard vs Rock → smart switch to Blastoise</li>
+      </ul>
+      <div><button class="activate" id="copyAgent">COPY AGENT INTERFACE</button>
+      <p class="sub">Paste into Unstop docs: <code>class PokemonAgent + decide() → move/switch</code>, stdlib only, &lt;0.01s/turn.</p></div>
+    </div>
+  </section>
+
+  <!-- MATCHUPS -->
+  <section class="panel">
+    <h2 class="sec">◈ WHY CHARIZ4RD X! WINS ◈</h2>
+    <div class="table-wrap"><table class="match">
+      <tr><th>You vs Foe</th><th>Tyranitar</th><th>Garchomp</th><th>Volcarona</th><th>Gengar</th></tr>
+      <tr><td><b>Venusaur</b> Sleep + Earth Power</td><td class="good">2x ✓</td><td class="bad">switch ✗</td><td class="good">Sleep ✓</td><td class="good">Sleep ✓</td></tr>
+      <tr><td><b>Blastoise</b> Ice + Yawn</td><td class="good">2x ✓</td><td class="good">4x ✓✓</td><td class="bad">Yawn</td><td class="mid">stall ~</td></tr>
+      <tr><td><b>Charizard</b> Focus Blast</td><td class="good">2x ✓</td><td class="good">2x ✓</td><td class="bad">switch ✗</td><td class="good">speed ✓</td></tr>
+    </table></div>
+    <div class="dl">
+      <a href="team.txt" download>⬇ team.txt (Adnan + Zayaan)</a>
+      <a href="chariz4rd_x_agent.py" download>⬇ agent .py</a>
+      <a href="Chariz4rdX.zip" download class="zip">⬇ Chariz4rdX.zip (Unstop)</a>
+    </div>
+  </section>
+
+  <section class="panel deploy">
+    <h2 class="sec">◈ DEPLOY — WEB-DEV ONLY ◈</h2>
+    <ol class="steps">
+      <li><b>Local:</b> <code>python -m http.server 8000</code> → <code>http://localhost:8000</code> → FIGHT → MUSIC ON (needs 1 click).</li>
+      <li><b>Hackathon:</b> portal → set my 3 moves → upload <code>chariz4rd_x_agent.py</code> → Simulate. Unstop → upload <code>Chariz4rdX.zip</code>.</li>
+      <li><b>Live:</b> <code>git add -A; git commit -m "ultra gba"; git push origin main</code> → Netlify drag-folder deploy.</li>
+      <li><b>Music note:</b> loop is original (Pokemon-like energy, not Nintendo notes) = copyright-safe. Real OST can't ship.</li>
+    </ol>
+  </section>
+
+  <footer>AETHERIA ✦ Ultra GBA Requiem • team Chariz4rd X! (Adnan A Laksar + Zayaan Yusuf) • Mega • G-Max • Z • Gen 1–8</footer>
+</main>
+<script src="script.js"></script>
+<div class="tutorial" id="tut">
+  <div class="tut-card">
+    <h3>HOW TO PLAY (15 sec)</h3>
+    <p>1 FIGHT = hit &nbsp;•&nbsp; 2 PKMN = switch &nbsp;•&nbsp; 3 MEGA/G-MAX/Z = ultimate form<br>4 Click trio cards &nbsp;•&nbsp; 5 Browse Gen 1–8 &nbsp;•&nbsp; 6 Damage Lab + Auto-Battle below</p>
+    <button id="tutGo">GOT IT — PLAY</button>
+  </div>
+</div>
+</body>
+</html>
