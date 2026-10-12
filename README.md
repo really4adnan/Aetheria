@@ -4,8 +4,20 @@
 **Event:** ARES Robotics x GDG NSUT — AI-versus-AI Pokémon Battle (Pokémon Showdown, Gen 9 3v3)
 **Theme:** GBA soul, ultra brain — Kanto trio + all Pokémon till Gen 8 (#001–#905)
 
-Live demo: deploy this folder on Netlify / Vercel (see Deploy below).
+Event guide and battle showcase: deploy this folder on Netlify / Vercel (see Deploy below).
 Practice portal: https://redline-aresxshunya.netlify.app/
+
+## REDLINE event guide
+
+The Aetheria home page includes the REDLINE — ARES x Google Developer Groups NSUT event details, deadlines, submission checklist, venue, prizes, and organizer contact links.
+
+- **Registration deadline:** October 15, 2026 at 12:59 PM IST.
+- **Phase 1 online submission closes:** October 15, 2026 at 11:59 PM IST.
+- **Offline tournament:** October 17, 2026, 12:00–5:00 PM IST, at APJ Lecture Theatre, NSUT main campus, Dwarka, Delhi.
+- **Team size:** 1–2 members. Submit a team-named ZIP containing a Pokémon roster `.txt` and Python agent `.py`.
+- **Prize amounts:** Winner ₹10,000; first runner-up ₹5,000; second runner-up ₹3,000.
+
+The registration and Phase 1 submission cutoffs are shown separately in the event listing. Check the practice portal for the official legal Pokémon pool, ruleset, sample algorithms, and submission documentation.
 
 ---
 

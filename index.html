@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="AETHERIA ✦ Ultra GBA Requiem — phenomena arena starring Chariz4rd X! Kanto trio AI agent with Mega, G-Max, Z showcase, Gen 1-8 dex, damage lab and auto-battle. ARES x Shunya.">
+<meta name="description" content="AETHERIA: REDLINE — ARES x GDG NSUT Pokémon AI battle entry guide, team submission, event schedule, venue and prizes.">
 <meta name="theme-color" content="#f2f4f8">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<title>AETHERIA ✦ Ultra GBA Requiem — starring Chariz4rd X!</title>
+<title>AETHERIA — REDLINE Pokémon AI Showdown</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="locked" data-theme="unite">
@@ -42,6 +42,7 @@
 <header class="topbar">
   <a class="logo" href="#home" aria-label="Aetheria home"><span class="logo-mark">A</span><span>AETHERIA<em>FIELD GUIDE &amp; BATTLE DECK</em></span></a>
   <nav class="site-nav" aria-label="Main navigation">
+    <a href="#event">REDLINE 2026</a>
     <a href="#battle">Battle</a>
     <a href="#team-section">Your team</a>
     <a href="#pokedex">Pokédex</a>
@@ -62,15 +63,99 @@
 <main class="wrap" id="home">
   <section class="welcome">
     <div class="welcome-copy">
-      <p class="eyebrow"><span></span> AETHERIA TRAINER LEAGUE · SEASON 01</p>
-      <h1>Every battle<br>has a <span>beginning.</span></h1>
-      <p class="welcome-text">Pick your partner, learn the matchups, and step into the arena. Your next great battle is only a move away.</p>
-      <a class="welcome-link" href="#battle">STEP INTO THE ARENA <span>↓</span></a>
+      <p class="eyebrow"><span></span> REDLINE · ARES × GDG NSUT · SHUNYA 2026</p>
+      <h1>Build the brain.<br><span>Let it battle.</span></h1>
+      <p class="welcome-text">Three Pokémon. One autonomous battle agent. Get your team ready for the REDLINE AI showdown, then step into the arena to try the strategy.</p>
+      <a class="welcome-link" href="#event">EVENT DETAILS &amp; SUBMISSION <span>↓</span></a>
     </div>
-    <div class="welcome-stamp" aria-label="Featuring the original Kanto trio">
-      <span>YOUR STARTERS</span>
-      <strong>FIRE<br><i>WATER</i><br>GRASS</strong>
-      <small>CHOOSE YOUR PARTNER</small>
+    <div class="welcome-stamp event-stamp" aria-label="Online submission October 15 and offline tournament October 17">
+      <span>SHUNYA 2026</span>
+      <strong>AI<br><i>POKÉMON</i><br>BATTLE</strong>
+      <small>SUBMIT 15 OCT · PLAY 17 OCT</small>
+    </div>
+  </section>
+
+  <section class="event-hub" id="event" aria-labelledby="event-title">
+    <div class="event-heading">
+      <div>
+        <p class="eyebrow"><span></span> THE CHALLENGE · DELHI, INDIA</p>
+        <h2 id="event-title">REDLINE <span>Pokémon AI Showdown</span></h2>
+        <p class="event-intro">An AI-versus-AI tournament by ARES Robotics and Google Developer Groups NSUT. Write an agent, submit your roster, and watch it battle autonomously on Pokémon Showdown.</p>
+      </div>
+      <div class="event-format"><span>FORMAT</span><strong>3 Pokémon<br>AI vs AI</strong><small>Pokémon Showdown</small></div>
+    </div>
+
+    <div class="event-deadlines" aria-label="Important deadlines">
+      <article class="deadline-card registration-deadline">
+        <span class="deadline-label">REGISTRATION DEADLINE</span>
+        <strong>15 OCT <i>2026</i></strong>
+        <span class="deadline-time">12:59 PM IST</span>
+      </article>
+      <article class="deadline-card submission-deadline">
+        <span class="deadline-label">PHASE 1 · ONLINE SUBMISSION CLOSES</span>
+        <strong>15 OCT <i>2026</i></strong>
+        <span class="deadline-time">11:59 PM IST</span>
+      </article>
+      <article class="deadline-card offline-deadline">
+        <span class="deadline-label">OFFLINE TOURNAMENT</span>
+        <strong>17 OCT <i>2026</i></strong>
+        <span class="deadline-time">12:00–5:00 PM IST</span>
+      </article>
+    </div>
+    <p class="deadline-note"><b>Note:</b> The event listing shows registration closing at 12:59 PM and Phase 1 submissions closing at 11:59 PM on 15 October. These are separate deadlines; register before submitting.</p>
+
+    <div class="event-actions">
+      <a class="event-button primary" href="https://redline-aresxshunya.netlify.app/" target="_blank" rel="noopener noreferrer">OPEN PRACTICE PORTAL <span>↗</span></a>
+      <a class="event-button secondary" href="https://chat.whatsapp.com/JZxlZDFnmVGJbATCITbNnr?mode=gi_t" target="_blank" rel="noopener noreferrer">JOIN EVENT UPDATES <span>↗</span></a>
+      <span class="event-team-size"><b>TEAM SIZE</b> 1–2 members</span>
+    </div>
+
+    <div class="event-columns">
+      <article class="event-card submission-card">
+        <p class="event-kicker">PHASE 01 <span>· 10–15 OCT · ONLINE SUBMISSION</span></p>
+        <h3>What your team submits</h3>
+        <ol class="submission-steps">
+          <li><span>01</span><div><b>Choose three legal Pokémon</b><small>For each: Pokémon name, ability, moveset, nature, and item. Confirm the permitted pool and ruleset on the practice portal.</small></div></li>
+          <li><span>02</span><div><b>Write the battle agent</b><small>Submit your Python <code>.py</code> algorithm. The portal provides sample algorithms and documentation; you may adapt a sample if you are new to coding.</small></div></li>
+          <li><span>03</span><div><b>Package one team ZIP</b><small>Name the ZIP after your team. Include the Pokémon roster as a <code>.txt</code> file and your algorithm as a <code>.py</code> file.</small></div></li>
+          <li><span>04</span><div><b>Test before uploading</b><small>Use the practice portal to check your roster and agent. Your AI must return legal actions and make every in-battle decision without human input.</small></div></li>
+        </ol>
+        <a class="text-link" href="https://redline-aresxshunya.netlify.app/" target="_blank" rel="noopener noreferrer">CHECK THE OFFICIAL PORTAL FOR RULES &amp; FILES ↗</a>
+      </article>
+
+      <div class="event-side">
+        <article class="event-card timeline-card">
+          <p class="event-kicker">PHASE 02 <span>· OFFLINE ROUND</span></p>
+          <h3>Showdown day</h3>
+          <p>Validated agents battle head-to-head. Pokémon Showdown resolves moves, switches, damage, status and knockouts while the tournament bracket tracks who advances.</p>
+          <div class="venue">
+            <span class="venue-pin">⌖</span>
+            <div><b>APJ Lecture Theatre</b><small>NSUT main campus, Dwarka<br>South West Delhi, Delhi, India</small></div>
+          </div>
+          <div class="event-facts"><span>MODE <b>Offline</b></span><span>DURATION <b>2.5–3 hours</b></span><span>PLATFORM <b>Pokémon Showdown</b></span></div>
+        </article>
+
+        <article class="event-card prize-card">
+          <p class="event-kicker">PLAY FOR THE PODIUM</p>
+          <h3>Prize pool <span>₹18,000</span></h3>
+          <div class="prize-row"><span><i>01</i> Winner</span><b>₹10,000</b></div>
+          <div class="prize-row"><span><i>02</i> First runner-up</span><b>₹5,000</b></div>
+          <div class="prize-row"><span><i>03</i> Second runner-up</span><b>₹3,000</b></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="event-rules">
+      <div><span class="rules-icon">✳</span><p><b>Autonomous play</b><small>No manual intervention once a match starts. Agents must choose legal actions within the time limit.</small></p></div>
+      <div><span class="rules-icon">◈</span><p><b>Same rules for everyone</b><small>Organizers fix the legal Pokémon, moves, format and mechanics. Check the portal for the final rules, integration details and any tool restrictions.</small></p></div>
+      <div><span class="rules-icon">⌘</span><p><b>Results decide</b><small>There is no separate subjective judging; tournament simulation results determine the winners.</small></p></div>
+      <div><span class="rules-icon">↗</span><p><b>Bring your laptop</b><small>Python is recommended. Basic programming helps; prior competitive Pokémon experience is not required.</small></p></div>
+    </div>
+    <div class="event-contact">
+      <span>QUESTIONS?</span>
+      <a href="mailto:teamaresnsit@gmail.com">teamaresnsit@gmail.com</a>
+      <a href="tel:+918700387995">+91 87003 87995</a>
+      <span class="contact-by">ARES Robotics × GDG NSUT</span>
     </div>
   </section>
 
