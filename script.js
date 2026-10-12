@@ -137,33 +137,44 @@ $("btnSwitch").onclick = () => {
   renderTeam(); say(`Go! ${MONS[cur].name}! (smart switch: resists foe STAB, threatens 2x back)`);
 };
 
-/* ---- ROTOM PHONE BOOT: Hi → rotate → enlarge → play ----
-   Fixes the old "press start, nothing happens": ONE clear START (bootStart)
-   unlocks audio, flips the phone 360°, fades overlay, then enables the arena. */
+/* Rotom welcomes the player before transforming into the Aetheria arena. */
 (function rotomBoot(){
-  const hi = ["Hi! ⚡ Bzzzt! I'm Rotom!", "Team Chariz4rd X! detected... Adnan + Zayaan ✓",
-              "3 phenomena loaded: MEGA • G-MAX • Z...", "Tap START and I enlarge into the arena!"];
-  let li = 0;
+  const greeting = Array.from(
+    "Hello, trainer! I'm Rotom! ⚡\nWelcome to Aetheria. Your adventure starts now!"
+  );
   const el = document.getElementById("rotomHi");
-  const typer = setInterval(() => { li = (li+1) % hi.length; if(el) el.textContent = hi[li]; }, 2200);
-  document.getElementById("bootStart").onclick = () => {
-    clearInterval(typer);
-    try{
-      if(!AC) AC = new (window.AudioContext || window.webkitAudioContext)();
+  const start = document.getElementById("bootStart");
+  const boot = document.getElementById("boot");
+  let index = 0;
+  const typer = setInterval(() => {
+    index++;
+    el.textContent = greeting.slice(0, index).join("");
+    if(index >= greeting.length){
+      clearInterval(typer);
+      start.disabled = false;
+      start.textContent = "ENTER AETHERIA";
+      boot.classList.add("ready");
+    }
+  }, 34);
+
+  start.onclick = () => {
+    if(start.disabled) return;
+    start.disabled = true;
+    boot.classList.add("launch");
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if(AudioContextClass){
+      if(!AC) AC = new AudioContextClass();
       if(AC.state === "suspended") AC.resume();
       nt(523.25, AC.currentTime, .12, "square", .08);
       nt(783.99, AC.currentTime+.1, .12, "square", .08);
       nt(1046.5, AC.currentTime+.2, .25, "square", .09);
-    }catch(_){}
-    document.getElementById("boot").classList.add("flip");
-    say("Rotom: Bzzzt! Enlarging screen... welcome to AETHERIA!");
+    }
+    say("Rotom: Bzzzt! Welcome to Aetheria. Let's begin!");
     setTimeout(() => {
-      document.getElementById("boot").classList.add("off");
+      boot.classList.add("off");
       document.body.classList.remove("locked");
       document.body.classList.add("playing");
-      const t = document.getElementById("tut");
-      if(t){ t.classList.remove("hide"); setTimeout(() => t.classList.add("hide"), 12000); }
-    }, 1150);
+    }, 1650);
   };
 })();
 const GENS = [["Gen 1",1,151],["Gen 2",152,251],["Gen 3",252,386],["Gen 4",387,493],
@@ -326,5 +337,3 @@ $("copyAgent").onclick = async () => {
   try{ await navigator.clipboard.writeText(txt); say("Agent interface copied! Paste into Unstop docs."); }
   catch(_){ say(txt); }
 };
-$("tutGo").onclick = () => $("tut").classList.add("hide");
-setTimeout(() => { if(!$("tut").classList.contains("hide")) $("tut").classList.add("hide"); }, 12000);
