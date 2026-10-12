@@ -279,6 +279,10 @@ $("btnMusic").onclick = () => {
   else { clearInterval(timer); say("Music off."); }
 };
 
+$("themeSelect").onchange = e => {
+  document.body.dataset.theme = e.target.value;
+};
+
 $("foeHp").style.width = "100%"; $("myHp").style.width = "100%";
 renderTeam(); renderRivals();
 say("AETHERIA online — team Chariz4rd X! vs rivals. Try MEGA / G-MAX / Z, browse Gen 1-8, press FIGHT.");
